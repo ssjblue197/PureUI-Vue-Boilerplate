@@ -27,8 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, watch } from 'vue';
-import { inject, getCurrentInstance } from 'vue';
+import { inject, computed } from 'vue';
 import * as z from 'zod';
 
 const errors = inject('errors') as Array<z.ZodIssue>;
@@ -80,16 +79,6 @@ const currentComponent = computed(() => {
       break;
   }
 });
-
-watch(
-  () => errors,
-  () => {
-    console.log('errors', errors);
-  },
-  {
-    deep: true,
-  },
-);
 </script>
 
 <style scoped></style>

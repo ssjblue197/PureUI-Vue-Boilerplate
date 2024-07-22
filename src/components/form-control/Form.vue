@@ -35,8 +35,8 @@ const submit = (event: Event) => {
     event.preventDefault();
     const data = serialize(event.target as HTMLFormElement);
     if (props.schema) {
-      // const parsed = props.schema.parse(data);
-      emits('submit', data);
+      const parsed = props.schema.parse(data);
+      emits('submit', parsed);
     }
   } catch (error) {
     if (error instanceof z.ZodError) {
