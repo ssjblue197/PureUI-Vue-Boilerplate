@@ -1,0 +1,27 @@
+{
+    "name": "Super Boilerplate",
+    "short_name": "Super Boilerplate",
+    "description": "SwiftPOD App-Super Boilerplate",
+    "start_url": "/",
+    "version": "1.0.0",
+    "icons": [{
+            "src": "/android-chrome-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/pwa-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/pwa-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "gcm_sender_id": "520641201951"
+}

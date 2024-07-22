@@ -1,0 +1,39 @@
+@import 'react-day-picker/dist/style.css';
+.rdp {
+    margin: 8px;
+    --rdp-cell-size: 2.5rem;
+    /* Size of the day cells. */
+    --rdp-caption-font-size: 1rem;
+    /* Font size for the caption labels. */
+    --rdp-accent-color: var(--sl-color-sky-200);
+    /* Accent color for the background of selected days. */
+    --rdp-background-color: var(--sl-color-sky-200);
+    /* Background color for the hovered/focused elements. */
+    --rdp-accent-color-dark: #3003e1;
+    /* Accent color for the background of selected days (to use in dark-mode). */
+    --rdp-background-color-dark: #180270;
+    /* Background color for the hovered/focused elements (to use in dark-mode). */
+    --rdp-outline: 2px solid var(--rdp-accent-color);
+    /* Outline border for focused elements */
+    --rdp-outline-selected: 3px solid var(--rdp-accent-color);
+    /* Outline border for focused _and_ selected elements */
+    --rdp-selected-color: var(--sl-color-sky-600);
+    .rdp-caption_label {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    .rdp-head_cell {
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+    .rdp-cell {
+        font-size: 1rem;
+        .rdp-day_today {
+            color: var(--sl-color-danger-500);
+            font-weight: 600;
+        }
+        .rdp-day_selected {
+            font-weight: 600;
+        }
+    }
+}

@@ -1,0 +1,144 @@
+:root {
+    //Focus ring: Focus ring tokens control the appearance of focus rings. Note that form inputs use --sl-input-focus-ring-* tokens instead.
+    .sl-theme-light {
+        --sl-focus-ring-color: var(--sl-color-primary-500);
+        --sl-color-texture: var(--sl-color-neutral-100);
+        --sl-background-header: white;
+    }
+    .sl-theme-dark {
+        --sl-focus-ring-color: var(--sl-color-primary-600);
+        --sl-color-texture: var(--sl-color-neutral-100);
+        --sl-background-header: #1A1A27;
+    }
+    & {
+        --sl-focus-ring-style: solid;
+        --sl-focus-ring-width: 1px;
+        --sl-focus-ring: var(--sl-focus-ring-style) var(--sl-focus-ring-width) var(--sl-focus-ring-color);
+        --sl-focus-ring-offset: 1px;
+        //Button: Button tokens control the appearance of buttons. In addition, buttons also currently use some form input tokens such as --sl-input-height-* and --sl-input-border-*. More button tokens may be added in the future to make it easier to style them more independently.
+        --sl-button-font-size-small: var(--sl-font-size-x-small);
+        --sl-button-font-size-medium: var(--sl-font-size-small);
+        --sl-button-font-size-large: var(--sl-font-size-medium);
+        //Form input: Form input tokens control the appearance of form controls such as input, select, textarea, etc.
+        --sl-input-height-small: 2rem;
+        --sl-input-height-medium: 2.8rem;
+        --sl-input-height-large: 3.125rem;
+        --sl-input-background-color: var(--sl-color-neutral-100);
+        --sl-input-background-color-hover: var(--sl-color-primary-50);
+        --sl-input-background-color-focus: var(--sl-color-primary-50);
+        --sl-input-background-color-disabled: var(--sl-color-neutral-200);
+        --sl-input-border-color: transparent;
+        --sl-input-border-color-hover: var(--sl-color-primary-500);
+        --sl-input-border-color-focus: var(--sl-color-primary-500);
+        --sl-input-border-color-disabled: var(--sl-color-neutral-0);
+        --sl-input-border-width: 1px;
+        --sl-input-required-content: '*';
+        --sl-input-required-content-offset: -2px;
+        --sl-input-required-content-color: var(--sl-input-label-color);
+        --sl-input-border-radius-small: var(--sl-border-radius-large);
+        --sl-input-border-radius-medium: var(--sl-border-radius-large);
+        --sl-input-border-radius-large: var(--sl-border-radius-large);
+        --sl-input-font-family: var(--sl-font-sans);
+        --sl-input-font-weight: var(--sl-font-weight-normal);
+        --sl-input-font-size-small: var(--sl-font-size-x-small);
+        --sl-input-font-size-medium: var(--sl-font-size-small);
+        --sl-input-font-size-large: var(--sl-font-size-medium);
+        --sl-input-letter-spacing: var(--sl-letter-spacing-normal);
+        --sl-input-color: var(--sl-color-neutral-600);
+        --sl-input-color-hover: var(--sl-color-neutral-700);
+        --sl-input-color-focus: var(--sl-color-neutral-700);
+        --sl-input-color-disabled: var(--sl-color-neutral-900);
+        --sl-input-icon-color: var(--sl-color-primary-300);
+        --sl-input-icon-color-hover: var(--sl-color-primary-600);
+        --sl-input-icon-color-focus: var(--sl-color-primary-600);
+        --sl-input-placeholder-color: var(--sl-color-neutral-300);
+        --sl-input-placeholder-color-disabled: var(--sl-color-neutral-600);
+        --sl-input-spacing-small: var(--sl-spacing-small);
+        --sl-input-spacing-medium: var(--sl-spacing-medium);
+        --sl-input-spacing-large: var(--sl-spacing-large);
+        --sl-input-focus-ring-color: var(--sl-focus-ring-color);
+        --sl-input-focus-ring-offset: 0;
+        //Filled Form Inputs: Filled form input tokens control the appearance of form controls using the filled variant.
+        --sl-input-filled-background-color: var(--sl-color-neutral-100);
+        --sl-input-filled-background-color-hover: var(--sl-color-neutral-100);
+        --sl-input-filled-background-color-focus: var(--sl-color-neutral-100);
+        --sl-input-filled-background-color-disabled: var(--sl-color-neutral-100);
+        --sl-input-filled-color: var(--sl-color-neutral-800);
+        --sl-input-filled-color-hover: var(--sl-color-neutral-800);
+        --sl-input-filled-color-focus: var(--sl-color-neutral-700);
+        --sl-input-filled-color-disabled: var(--sl-color-neutral-800);
+        //Form label: Form label tokens control the appearance of labels in form controls.
+        --sl-input-label-font-size-small: var(--sl-font-size-small);
+        --sl-input-label-font-size-medium: var(--sl-font-size-medium);
+        --sl-input-label-font-size-large: var(--sl-font-size-large);
+        --sl-input-label-color: inherit;
+        //Help text: Help text tokens control the appearance of help text in form controls.
+        --sl-input-help-text-font-size-small: var(--sl-font-size-x-small);
+        --sl-input-help-text-font-size-medium: var(--sl-font-size-small);
+        --sl-input-help-text-font-size-large: var(--sl-font-size-medium);
+        --sl-input-help-text-color: var(--sl-color-neutral-500);
+        //Toggle: Toggle tokens control the appearance of toggles such as checkbox, radio, switch, etc.
+        --sl-toggle-size-small: 0.875rem;
+        --sl-toggle-size-medium: 1.125rem;
+        --sl-toggle-size-large: 1.375rem;
+        //Overlay: Overlay tokens control the appearance of overlays as used in dialog, drawer, etc.
+        --sl-overlay-background-color: hsl(240 3.8% 46.1% / 33%);
+        //Panels: Panel tokens control the appearance of panels such as those used in dialog, drawer, menu, etc.
+        --sl-panel-background-color: var(--sl-color-neutral-0);
+        --sl-panel-border-color: var(--sl-color-neutral-200);
+        --sl-panel-border-width: 1px;
+        //Tooltip: Tooltip tokens control the appearance of tooltips. This includes the tooltip component as well as other implementations, such range tooltips.
+        --sl-tooltip-border-radius: var(--sl-border-radius-medium);
+        --sl-tooltip-background-color: var(--sl-color-neutral-800);
+        --sl-tooltip-color: var(--sl-color-neutral-0);
+        --sl-tooltip-font-family: var(--sl-font-sans);
+        --sl-tooltip-font-weight: var(--sl-font-weight-normal);
+        --sl-tooltip-font-size: var(--sl-font-size-small);
+        --sl-tooltip-line-height: var(--sl-line-height-dense);
+        --sl-tooltip-padding: var(--sl-spacing-2x-small) var(--sl-spacing-x-small);
+        --sl-tooltip-arrow-size: 6px;
+        //Drawler
+        --size: 264px;
+        --header-spacing: 0;
+        --body-spacing: 0;
+        --footer-spacing: 0;
+    }
+}
+
+.sidebar::part(base) {
+    background: transparent !important;
+    width: 100vw !important;
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+
+.sidebar::part(panel) {
+    background: transparent !important;
+    width: 100vw !important;
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+
+.sidebar::part(body) {
+    padding: 0 !important;
+}
+
+.sidebar::part(overlay) {
+    background: transparent !important;
+}
+
+.sidebar::part(footer) {
+    padding: 0 !important;
+}
+
+.select-field::part(listbox) {
+    max-height: 300px !important;
+}
+
+.input::part(clear-button) {
+    color: var(--sl-color-neutral-600);
+    position: absolute !important;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}

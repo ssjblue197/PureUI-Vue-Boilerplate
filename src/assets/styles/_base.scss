@@ -1,0 +1,154 @@
+@layer base {
+     :root {
+        --sl-font-sans: 'Gilroy', system-ui, Avenir, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', Segoe UI Symbol;
+        font-family: var(--sl-font-sans);
+        line-height: 1.5;
+        font-weight: 400;
+        font-size: 16px;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+        //Primary theme
+        --sl-color-primary-50: var(--sl-color-violet-50);
+        --sl-color-primary-100: var(--sl-color-violet-100);
+        --sl-color-primary-200: var(--sl-color-violet-200);
+        --sl-color-primary-300: var(--sl-color-violet-300);
+        --sl-color-primary-400: var(--sl-color-violet-400);
+        --sl-color-primary-500: var(--sl-color-violet-500);
+        --sl-color-primary-600: var(--sl-color-violet-400);
+        --sl-color-primary-700: var(--sl-color-violet-700);
+        --sl-color-primary-800: var(--sl-color-violet-800);
+        --sl-color-primary-900: var(--sl-color-violet-900);
+        --sl-color-primary-950: var(--sl-color-violet-950);
+        //Font
+        //Font sizes
+        --sl-font-size-2x-small: 0.625rem;
+        --sl-font-size-x-small: 0.75rem;
+        --sl-font-size-small: 0.875rem;
+        --sl-font-size-medium: 1rem;
+        --sl-font-size-large: 1.25rem;
+        --sl-font-size-x-large: 1.5rem;
+        --sl-font-size-2x-large: 2.25rem;
+        --sl-font-size-3x-large: 3rem;
+        --sl-font-size-4x-large: 4.5rem;
+        //Font weight
+        --sl-font-weight-light: 300;
+        --sl-font-weight-normal: 400;
+        --sl-font-weight-semibold: 500;
+        --sl-font-weight-bold: 700;
+        //Letter spacing
+        --sl-letter-spacing-denser: -0.03em;
+        --sl-letter-spacing-dense: -0.015em;
+        --sl-letter-spacing-normal: normal;
+        --sl-letter-spacing-loose: 0.075em;
+        --sl-letter-spacing-looser: 0.15em;
+        //Line height
+        --sl-line-height-denser: 1;
+        --sl-line-height-dense: 1.4;
+        --sl-line-height-normal: 1.8;
+        --sl-line-height-loose: 2.2;
+        --sl-line-height-looser: 2.6;
+        //Spacing
+        --sl-spacing-3x-small: 0.125rem;
+        --sl-spacing-2x-small: 0.25rem;
+        --sl-spacing-x-small: 0.5rem;
+        --sl-spacing-small: 0.75rem;
+        --sl-spacing-medium: 1rem;
+        --sl-spacing-large: 1.25rem;
+        --sl-spacing-x-large: 1.75rem;
+        --sl-spacing-2x-large: 2.25rem;
+        --sl-spacing-3x-large: 3rem;
+        --sl-spacing-4x-large: 4.5rem;
+        //Radius
+        --sl-border-radius-small: 0.1875rem;
+        --sl-border-radius-medium: 0.25rem;
+        --sl-border-radius-large: 0.5rem;
+        --sl-border-radius-x-large: 1rem;
+        --sl-border-radius-circle: 50%;
+        --sl-border-radius-pill: 9999px;
+        //Transition
+        --sl-transition-x-slow: 1000ms;
+        --sl-transition-slow: 500ms;
+        --sl-transition-medium: 250ms;
+        --sl-transition-fast: 150ms;
+        --sl-transition-x-fast: 50ms;
+        //Z-index
+        --sl-z-index-drawer: 700;
+        --sl-z-index-dialog: 800;
+        --sl-z-index-dropdown: 900;
+        --sl-z-index-alert-group: 950;
+        --sl-z-index-tooltip: 1000;
+    }
+     :root {}
+     :host {}
+    .sl-theme-light {
+        /* your custom styles here */
+    }
+}
+
+@layer base {
+    #app {
+        @apply h-screen w-screen bg-white;
+    }
+    html {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-overflow-scrolling: touch !important;
+        overflow: hidden !important;
+    }
+    body {
+        @apply min-h-[100vh] overflow-hidden;
+    }
+    .text-ibm {
+        font-family: 'IBM Plex Mono', system-ui, Avenir, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', Segoe UI Symbol;
+    }
+    .text-inter {
+        font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', Segoe UI Symbol;
+    }
+    * {
+        box-sizing: inherit;
+        // /* Scrollbar Styling */
+         ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+         ::-webkit-scrollbar-track {
+            background-color: transparent;
+            -webkit-border-radius: 8px;
+            border-radius: 8px;
+        }
+         ::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 8px;
+            border-radius: 8px;
+            background: rgb(144, 147, 153, 0.3);
+        }
+    }
+    .main-content {
+        @apply w-full md: px-6 sm: max-w-[720px] md: max-w-[992px] lg: max-w-[1000px] xl: max-w-[1200px] 2xl: max-w-[1500px];
+    }
+    .center {
+        @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+    }
+    .wrapper {
+        @apply w-full h-full relative
+    }
+    //Style scrollbar
+     ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+     ::-webkit-scrollbar-track {
+        background-color: transparent;
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+    }
+     ::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+        background: rgb(144, 147, 153, 0.3);
+    }
+}
