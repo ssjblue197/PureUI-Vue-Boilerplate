@@ -27,8 +27,15 @@
 </template>
 
 <script setup lang="ts">
-import { inject, computed } from 'vue';
+import {
+  inject,
+  computed,
+  getCurrentInstance,
+  onMounted,
+  ref,
+} from 'vue';
 import * as z from 'zod';
+const element = ref<Element>();
 
 const errors = inject('errors') as Array<z.ZodIssue>;
 
@@ -78,6 +85,15 @@ const currentComponent = computed(() => {
     default:
       break;
   }
+});
+
+onMounted(() => {
+  const currentInstance = getCurrentInstance();
+  const fieldName = currentInstance?.attrs?.name;
+  console.log(
+    'fieldName',
+    (element.value as Element).closest('form'),
+  );
 });
 </script>
 
