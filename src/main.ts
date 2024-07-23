@@ -12,6 +12,8 @@ import FormField from '@/components/form-control/FormField.vue';
 import stores from '@/stores';
 import router from '@/router';
 
+import dayjs from '@/plugins/dayjs';
+
 setBasePath('/public');
 registerIconLibrary('extend', {
   resolver: (name: string) => `icons/${name}.svg`, //Public folder after bundle
@@ -20,6 +22,9 @@ registerIconLibrary('extend', {
 });
 
 const app = createApp(App);
+
+// Use the Day.js plugin
+app.use(dayjs);
 
 app.component('Form', Form);
 app.component('FormField', FormField);

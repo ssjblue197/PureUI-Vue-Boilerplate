@@ -1,50 +1,30 @@
 <template>
-  <form
-    novalidate
-    v-bind="$attrs"
-    @submit="submit"
-    :name="props.name"
-  >
+  <form novalidate v-bind="$attrs" @submit="handleSubmit">
     <slot></slot>
   </form>
 </template>
 
 <script setup lang="ts">
-import { serialize } from '@shoelace-style/shoelace/dist/utilities/form.js';
-import * as z from 'zod';
-import { provide, ref } from 'vue';
-
 interface Props {
-  schema?: any;
-  name: string;
+  form?: any;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  schema: undefined,
-  name: 'form',
+  form: undefined,
 });
 
 const emits = defineEmits(['submit']);
 
-const errors = ref<Array<z.ZodIssue>>([]);
+function submit(data: any) {
+  emits('submit', data);
+}
 
-provide(`errors`, errors.value);
-
-const submit = (event: Event) => {
+const handleSubmit = (event: Event) => {
   try {
     event.preventDefault();
-    const data = serialize(event.target as HTMLFormElement);
-    if (props.schema) {
-      const parsed = props.schema.parse(data);
-      emits('submit', parsed);
-    }
+    props.form.handleSubmit(submit);
   } catch (error) {
-    if (error instanceof z.ZodError) {
-      const err = error as z.ZodError;
-      if (Array.isArray(err?.issues)) {
-        errors.value = structuredClone(err.issues);
-      }
-    }
+    console.log('error', error);
   }
 };
 </script>

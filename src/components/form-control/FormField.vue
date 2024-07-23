@@ -11,62 +11,51 @@
     <component
       :is="currentComponent"
       v-bind="$attrs"
-      ref="element"
+      @sl-change="props.form.handleChange"
+      @sl-blur="props.form.handleBlur"
+      @sl-input="props.form.handleTouch"
     >
       <span v-if="props.element === 'checkbox'">{{
         props.label
       }}</span>
     </component>
-    <span
-      v-if="errorMessage"
-      class="text-sm font-normal text-error-500"
-    >
-      {{ errorMessage }}
-    </span>
+    <transition name="slide-fade-up" appear>
+      <span
+        v-if="local.error"
+        class="text-sm font-normal text-error-500"
+      >
+        {{ local.error }}
+      </span>
+    </transition>
   </div>
 </template>
 
 <script setup lang="ts">
 import {
-  inject,
   computed,
+  reactive,
   getCurrentInstance,
-  onMounted,
   ref,
+  watch,
+  onMounted,
 } from 'vue';
-import * as z from 'zod';
-const element = ref<Element>();
 
-const errors = inject('errors') as Array<z.ZodIssue>;
-
-const errorMessage = computed(() => {
-  const currentInstance = getCurrentInstance();
-  const fieldName = currentInstance?.attrs?.name;
-
-  if (Array.isArray(errors) && fieldName) {
-    const error = errors.find(
-      (err) => err.path[0] === fieldName,
-    );
-    if (error) {
-      return error.message;
-    }
-  }
-  return;
-});
 interface Props {
+  form: any;
   label?: string;
-  error?: string;
   element?:
     | 'input'
     | 'select'
     | 'checkbox'
     | 'radio'
-    | 'textarea';
+    | 'textarea'
+    | 'switch'
+    | 'color-picker';
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  form: undefined,
   label: undefined,
-  error: undefined,
   element: 'input',
 });
 
@@ -82,18 +71,40 @@ const currentComponent = computed(() => {
       return 'sl-radio';
     case 'textarea':
       return 'sl-textarea';
+    case 'switch':
+      return 'sl-switch';
+    case 'color-picker':
+      return 'sl-color-picker';
     default:
       break;
   }
 });
 
+const currentInstance = ref<any>(null);
+
+interface Local {
+  error?: string;
+}
+
+const local: Local = reactive({
+  error: '',
+});
+
+watch(
+  () => props.form.errors,
+  () => {
+    const fieldName = currentInstance.value?.attrs
+      ?.name as string;
+    local.error =
+      fieldName && props.form.errors.value[fieldName];
+  },
+  {
+    deep: true,
+  },
+);
+
 onMounted(() => {
-  const currentInstance = getCurrentInstance();
-  const fieldName = currentInstance?.attrs?.name;
-  console.log(
-    'fieldName',
-    (element.value as Element).closest('form'),
-  );
+  currentInstance.value = getCurrentInstance();
 });
 </script>
 

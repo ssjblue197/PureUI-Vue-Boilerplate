@@ -25,12 +25,12 @@
       >
         <Form
           class="flex w-full flex-col items-start gap-5"
-          :schema="schema"
+          :form="form"
           @submit="handleSubmit"
-          name="login-form"
           id="login-form"
         >
           <FormField
+            :form="form"
             element="input"
             :label="'Email'"
             placeholder="Enter your email"
@@ -39,6 +39,7 @@
             type="email"
           />
           <FormField
+            :form="form"
             element="input"
             :label="'Password'"
             placeholder="Enter your password"
@@ -83,18 +84,17 @@
       </div>
     </div>
     <span
-      class="absolute bottom-6 left-6 text-sm text-gray-600"
+      class="absolute bottom-6 text-sm text-gray-600 md:left-6"
       >© Copyright 2024.</span
     >
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import { z } from 'zod';
 import { $ } from '@/utils/helper';
+import { useForm } from '@/components/form-control';
 
-const formRef = ref(null);
 // Define your form schema using Zod
 const schema = z.object({
   email: z
@@ -102,6 +102,17 @@ const schema = z.object({
     .email({ message: 'Invalid email address' })
     .nullable(),
   password: z.string().min(6).nullable(),
+});
+
+const form = useForm({
+  schema,
+  initialValues: {
+    email: '',
+    password: '',
+  },
+  mode: 'onChange',
+  criteriaMode: 'firstError',
+  shouldFocusError: true,
 });
 
 const handleSubmit = (data: any) => {

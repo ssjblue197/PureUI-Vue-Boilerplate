@@ -1,11 +1,12 @@
-@layer components {
     /*  LIST ANIMATION* /
 
 .list-move, /* apply transition to moving elements */
+    
     .list-enter-active,
     .list-leave-active {
         transition: all 0.5s ease;
     }
+    
     .list-enter-from,
     .list-leave-to {
         opacity: 0;
@@ -13,74 +14,92 @@
     }
     /* ensure leaving items are taken out of layout flow so that moving
    animations can be calculated correctly. */
+    
     .list-leave-active {
         position: absolute;
     }
     /* FADE */
+    
     .fade-enter-active,
     .fade-leave-active {
         transition: opacity 0.5s ease;
     }
+    
     .fade-enter-from,
     .fade-leave-to {
         opacity: 0;
     }
     /* SLIDE FADE FROM LEFT => RIGHT, RIGHT => LEFT*/
+    
     .slide-fade-left-enter-active {
         transition: all 0.3s ease-out;
     }
+    
     .slide-fade-left-leave-active {
         transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
     }
+    
     .slide-fade-left-enter-from,
     .slide-fade-left-leave-to {
         transform: translateX(-30px);
         opacity: 0;
     }
     /* SLIDE FADE FROM RIGHT => LEFT, LEFT => RIGHT*/
+    
     .slide-fade-right-enter-active {
         transition: all 0.3s ease-out;
     }
+    
     .slide-fade-right-leave-active {
         transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
     }
+    
     .slide-fade-right-enter-from,
     .slide-fade-right-leave-to {
         transform: translateX(30px);
         opacity: 0;
     }
     /* SLIDE FADE FROM TOP => BOTTOM, BOTTOM => TOP*/
+    
     .slide-fade-down-enter-active {
         transition: all 0.3s ease-out;
     }
+    
     .slide-fade-down-leave-active {
         transition: all 0.8s ease-out;
     }
+    
     .slide-fade-down-enter-from,
     .slide-fade-down-leave-to {
-        transform: translateX(-50%) translateY(-100%);
+        transform: translateY(-100%);
         opacity: 0;
     }
     /* SLIDE FADE FROM BOTTOM => TOP, TOP => BOTTOM*/
+    
     .slide-fade-up-enter-active {
         transition: all 0.3s ease-out;
     }
+    
     .slide-fade-up-leave-active {
         transition: all 0.5s ease-out;
     }
+    
     .slide-fade-up-enter-from,
     .slide-fade-up-leave-to {
-        transform: translateX(-50%) translateY(100%);
+        transform: translateY(100%);
         opacity: 0;
     }
     /* Scale UP => 1, Scale DOWN to 0*/
+    
     .bounce-enter-active {
         animation: bounce-in 0.5s;
     }
+    
     .bounce-leave-active {
         animation: bounce-in 0.5s reverse;
     }
     /* Key frames */
+    
     @keyframes bounce-in {
         0% {
             transform: scale(0);
@@ -92,4 +111,3 @@
             transform: scale(1);
         }
     }
-}
