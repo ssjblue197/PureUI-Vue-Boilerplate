@@ -1,5 +1,7 @@
 import type { ROLE, User } from '@/types/user';
 
+export interface Employee {}
+
 export interface Form {
   username?: string;
   email?: string;

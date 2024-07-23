@@ -53,13 +53,13 @@ router.beforeEach((to, from, next) => {
   const authStore = useAuthStore();
 
   if (to.name !== 'login') {
-    if (!authStore.employee) {
+    if (!authStore.token) {
       next({
         name: 'login',
       });
     }
   } else {
-    if (authStore.employee && authStore.employee?.id) {
+    if (authStore.token) {
       next({
         name: 'home',
       });

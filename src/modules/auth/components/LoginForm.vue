@@ -94,6 +94,13 @@
 import { z } from 'zod';
 import { $ } from '@/utils/helper';
 import { useForm } from '@/components/form-control';
+import makeid from '@/utils/makeid';
+import { useAuthStore } from '@/modules/auth/store';
+import { useRouter } from 'vue-router';
+
+const authStore = useAuthStore();
+
+const router = useRouter();
 
 // Define your form schema using Zod
 const schema = z.object({
@@ -117,6 +124,8 @@ const form = useForm({
 
 const handleSubmit = (data: any) => {
   console.log(data);
+  authStore.token = makeid(32);
+  router.push({ name: 'home' });
 };
 
 const submitForm = () => {

@@ -4,6 +4,7 @@ import type { AuthParams } from '@/api/auth';
 import { useNotificationStore } from '@/stores/notification';
 import axios from 'axios';
 import { getErrorMessage } from '@/utils/helper';
+import type { Employee } from '@/modules/auth/types';
 
 export const useAuthStore = defineStore('auth', {
   state: () => {
@@ -32,7 +33,7 @@ export const useAuthStore = defineStore('auth', {
   },
   persist: {
     storage: localStorage,
-    key: 'auth-storage-pod-app',
+    key: 'seller-app-auth-storage',
     // paths: [] /*Define states can persisted*/
   },
 });
