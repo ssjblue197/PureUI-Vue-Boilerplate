@@ -1,6 +1,9 @@
-import type { ROLE, User } from '@/types/user';
+import { z } from 'zod';
 
-export interface Employee {}
+export interface User {
+  id?: number;
+  name?: string;
+}
 
 export interface Form {
   username?: string;
@@ -8,25 +11,13 @@ export interface Form {
   password?: string;
 }
 
-export type Actions = {
-  login: (payload: Form) => Promise<any>;
-  refresh: () => Promise<any>;
-  logout: () => void;
-  register: (payload: Form) => Promise<any>;
-  forgotPassword: (payload: Form) => Promise<any>;
-  reset: () => void;
-  userRole: () => ROLE | undefined;
-  setToken: (token: string) => void;
-  setRemember: (payload: {
-    remember?: boolean;
-    email_login?: string;
-  }) => void;
-};
-
-export interface State {
-  currentUser?: User;
-  access_token?: string;
-  remember?: boolean;
-  email_login?: string;
-  enable_2fa?: 0 | 1;
-}
+// Define your form schema using Zod
+export const loginSchema = z.object({
+  username: z
+    .string()
+    .min(1, {
+      message: 'Username is required',
+    })
+    .nullable(),
+  password: z.string().min(6).nullable(),
+});

@@ -32,11 +32,10 @@
           <FormField
             :form="form"
             element="input"
-            :label="'Email'"
-            placeholder="Enter your email"
-            name="email"
+            :label="'Username'"
+            placeholder="Enter username"
+            name="username"
             class="w-full"
-            type="email"
           />
           <FormField
             :form="form"
@@ -91,30 +90,20 @@
 </template>
 
 <script setup lang="ts">
-import { z } from 'zod';
 import { $ } from '@/utils/helper';
 import { useForm } from '@/components/form-control';
-import makeid from '@/utils/makeid';
 import { useAuthStore } from '@/modules/auth/store';
+import type { Form } from '@/modules/auth/types';
+import { loginSchema } from '@/modules/auth/types';
 import { useRouter } from 'vue-router';
 
 const authStore = useAuthStore();
-
 const router = useRouter();
 
-// Define your form schema using Zod
-const schema = z.object({
-  email: z
-    .string()
-    .email({ message: 'Invalid email address' })
-    .nullable(),
-  password: z.string().min(6).nullable(),
-});
-
 const form = useForm({
-  schema,
+  schema: loginSchema,
   initialValues: {
-    email: '',
+    username: '',
     password: '',
   },
   mode: 'onChange',
@@ -122,10 +111,11 @@ const form = useForm({
   shouldFocusError: true,
 });
 
-const handleSubmit = (data: any) => {
-  console.log(data);
-  authStore.token = makeid(32);
-  router.push({ name: 'home' });
+const handleSubmit = async (data: Form) => {
+  try {
+    await authStore.login(data);
+    router.push({ name: 'home' });
+  } catch (error) {}
 };
 
 const submitForm = () => {
