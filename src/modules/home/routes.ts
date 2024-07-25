@@ -7,7 +7,7 @@ export default [
     component: async () =>
       import('@/modules/home/pages/Index.vue'),
     meta: {
-      layout: 'default',
+      layout: 'main',
     },
   },
 ] as Array<RouteRecordRaw>;

@@ -1,7 +1,4 @@
-import axios, {
-  AxiosRequestConfig,
-  AxiosResponse,
-} from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { useAuthStore } from '@/modules/auth/store';
 
 //Import NProgress to show progress of api calling
