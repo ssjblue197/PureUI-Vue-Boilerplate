@@ -1,7 +1,7 @@
 import sidebar from '@/configs/sidebar';
 import MenuItem from '@/components/common/MenuItem';
 import { useNavigate } from 'react-router-dom';
-import { SlIcon } from '@shoelace-style/shoelace/dist/react';
+import { PIcon } from 'pure-uikit/dist/react';
 import { useTranslation } from 'react-i18next';
 import { useAuthStore } from '@/features/auth/store';
 
@@ -17,16 +17,16 @@ export default function Sidebar(props: ISidebarProps) {
   const handleLogout = async () => {
     await logout();
     navigate('/sign-in');
-  }
+  };
   return (
     <div
-      className="flex flex-col w-fit md:w-[264px] relative h-full overflow-hidden bg-[#1e1e2d] !text-[#494b74]"
+      className="relative flex h-full w-fit flex-col overflow-hidden bg-[#1e1e2d] !text-[#494b74] md:w-[264px]"
       onClick={(e) => {
         e.stopPropagation();
       }}
     >
       <div
-        className="w-full py-3 px-6 flex flex-row gap-3 bg-[#1A1A27] select-none cursor-pointer"
+        className="flex w-full cursor-pointer select-none flex-row gap-3 bg-[#1A1A27] px-6 py-3"
         onClick={() => navigate('/')}
       >
         <img
@@ -35,33 +35,38 @@ export default function Sidebar(props: ISidebarProps) {
           className="h-12 shadow-md"
         />
         <div className="flex flex-col">
-          <span className="font-medium text-xl text-white">
+          <span className="text-xl font-medium text-white">
             LETGOAI
           </span>
-          <span className="text-xs font-medium text-[var(--sl-color-primary-400)] tracking-wide uppercase">
+          <span className="text-xs font-medium uppercase tracking-wide text-[var(--p-color-primary-400)]">
             Affiliate center
           </span>
         </div>
       </div>
-      <nav className="flex flex-1 flex-col w-full max-h-[calc(100vh-72px)] overflow-y-auto overflow-x-hidden pt-6">
+      <nav className="flex max-h-[calc(100vh-72px)] w-full flex-1 flex-col overflow-y-auto overflow-x-hidden pt-6">
         <ul role="list">
           {sidebar.map((i, index) => (
-            <MenuItem key={index} data={i} 
+            <MenuItem
+              key={index}
+              data={i}
               closeSidebar={props.onClose}
             />
           ))}
         </ul>
       </nav>
-      <div className="w-full flex justify-center items-center p-4 gap-3 hover:opacity-80 active:opacity-80 active:bg-slate-50/20 border-t border-slate-50/20 cursor-pointer"
+      <div
+        className="flex w-full cursor-pointer items-center justify-center gap-3 border-t border-slate-50/20 p-4 hover:opacity-80 active:bg-slate-50/20 active:opacity-80"
         onClick={() => {
           handleLogout();
         }}
       >
-        <SlIcon
+        <PIcon
           name="box-arrow-right"
-          className="text-red-500 w-5 h-5"
-        ></SlIcon>
-        <span className='text-white text-sm'>{t('system.sign-out')}</span>
+          className="h-5 w-5 text-red-500"
+        ></PIcon>
+        <span className="text-sm text-white">
+          {t('system.sign-out')}
+        </span>
       </div>
     </div>
   );

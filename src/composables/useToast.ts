@@ -42,13 +42,13 @@ export function useToast() {
     const { message, variant, icon, duration, closable } =
       Object.assign(defaultOptions, options);
     const alert = Object.assign(
-      document.createElement('sl-alert'),
+      document.createElement('p-alert'),
       {
         variant,
         closable,
         duration,
         innerHTML: `
-            <sl-icon name="${icon || iconByStatus[variant]}" slot="icon"></sl-icon>
+            <p-icon name="${icon || iconByStatus[variant]}" slot="icon"></p-icon>
             ${escapeHtml(message)}
           `,
       },

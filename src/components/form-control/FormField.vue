@@ -11,9 +11,9 @@
     <component
       :is="currentComponent"
       v-bind="$attrs"
-      @sl-change="props.form.handleChange"
-      @sl-blur="props.form.handleBlur"
-      @sl-input="props.form.handleTouch"
+      @p-change="props.form.handleChange"
+      @p-blur="props.form.handleBlur"
+      @p-input="props.form.handleTouch"
     >
       <span v-if="props.element === 'checkbox'">{{
         props.label
@@ -62,19 +62,19 @@ const props = withDefaults(defineProps<Props>(), {
 const currentComponent = computed(() => {
   switch (props.element) {
     case 'input':
-      return 'sl-input';
+      return 'p-input';
     case 'select':
-      return 'sl-select';
+      return 'p-select';
     case 'checkbox':
-      return 'sl-checkbox';
+      return 'p-checkbox';
     case 'radio':
-      return 'sl-radio';
+      return 'p-radio';
     case 'textarea':
-      return 'sl-textarea';
+      return 'p-textarea';
     case 'switch':
-      return 'sl-switch';
+      return 'p-switch';
     case 'color-picker':
-      return 'sl-color-picker';
+      return 'p-color-picker';
     default:
       break;
   }

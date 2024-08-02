@@ -3,10 +3,7 @@ import {
   DayPicker,
   SelectSingleEventHandler,
 } from 'react-day-picker';
-import {
-  SlInput,
-  SlIcon,
-} from '@shoelace-style/shoelace/dist/react';
+import { PInput, PIcon } from 'pure-uikit/dist/react';
 import { useState, useEffect, useRef } from 'react';
 import { enUS, vi } from 'date-fns/locale';
 import { useTranslation } from 'react-i18next';
@@ -114,39 +111,41 @@ function DatePicker(props: IDatePickerProps) {
   useEffect(() => {
     if (typeof props?.value === 'string') {
       setInputValue(props?.value);
-      setSelected(parse(props?.value, 'y-MM-dd', new Date()));
+      setSelected(
+        parse(props?.value, 'y-MM-dd', new Date()),
+      );
     } else {
       setInputValue(
         format(props?.value || new Date(), 'y-MM-dd'),
       );
-      setSelected(props?.value)
+      setSelected(props?.value);
     }
   }, [props.value]);
   return (
     <span className="relative select-none" ref={element}>
-      <SlInput
+      <PInput
         placeholder={format(new Date(), 'y-MM-dd')}
-        onSlFocus={() => setShow(true)}
-        onSlChange={(e) => {
+        onPFocus={() => setShow(true)}
+        onPChange={(e) => {
           e.preventDefault();
           e.stopPropagation();
           handleInputChange(e);
         }}
-        onSlBlur={() => setShow(false)}
+        onPBlur={() => setShow(false)}
         value={inputValue}
         autocomplete="off"
         size={props?.size}
         clearable={props?.clearable}
         className="input"
       >
-        <SlIcon
+        <PIcon
           name="calendar"
           slot="prefix"
-          className="text-[var(--sl-color-neutral-500)] w-5 h-5"
-        ></SlIcon>
-      </SlInput>
+          className="h-5 w-5 text-[var(--p-color-neutral-500)]"
+        ></PIcon>
+      </PInput>
       {show && (
-        <span className="absolute top-[calc(100%+8px)] left-0 bg-[var(--sl-color-neutral-100)]  rounded-lg shadow-lg z-10">
+        <span className="absolute left-0 top-[calc(100%+8px)] z-10 rounded-lg bg-[var(--p-color-neutral-100)] shadow-lg">
           <DayPicker
             {...props}
             required

@@ -1,0 +1,12 @@
+@layer base {
+    :root {
+        /*
+   * Transitions
+   */
+   --p-transition-x-slow: 1000ms;
+   --p-transition-slow: 500ms;
+   --p-transition-medium: 250ms;
+   --p-transition-fast: 150ms;
+   --p-transition-x-fast: 50ms;
+    }
+}

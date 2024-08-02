@@ -9,13 +9,13 @@
         />
       </div>
       <div class="search">
-        <sl-input
+        <p-input
           placeholder="Search"
           filled
           class="bg-transparent"
         >
-          <sl-icon slot="prefix" name="search"></sl-icon>
-        </sl-input>
+          <p-icon slot="prefix" name="search"></p-icon>
+        </p-input>
       </div>
       <div class="menu flex flex-col gap-1">
         <div

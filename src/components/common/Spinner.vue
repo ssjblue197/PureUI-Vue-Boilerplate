@@ -8,11 +8,11 @@
 .loading {
   height: 50px;
   width: 50px;
-  border: 6px solid var(--sl-color-primary-500);
+  border: 6px solid var(--p-color-primary-500);
   border-radius: 4px;
   box-shadow:
-    0 0 8px var(--sl-color-primary-500),
-    0 0 8px var(--sl-color-primary-500) inset;
+    0 0 8px var(--p-color-primary-500),
+    0 0 8px var(--p-color-primary-500) inset;
   position: absolute;
   top: 50%;
   left: 50%;

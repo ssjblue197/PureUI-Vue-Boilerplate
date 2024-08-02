@@ -1,11 +1,11 @@
 import { createApp } from 'vue';
-import '@shoelace-style/shoelace/dist/themes/light.css';
-import '@shoelace-style/shoelace/dist/themes/dark.css';
+import 'pure-uikit/dist/themes/light.css';
+import 'pure-uikit/dist/themes/dark.css';
 import '@/assets/styles/index.scss';
 import App from './App.vue';
-import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';
-import { registerIconLibrary } from '@shoelace-style/shoelace/dist/utilities/icon-library.js';
-import '@shoelace-style/shoelace/dist/shoelace.js';
+import { setBasePath } from 'pure-uikit/dist/utilities/base-path.js';
+import { registerIconLibrary } from 'pure-uikit/dist/utilities/icon-library.js';
+import 'pure-uikit/dist/pure-ui.js';
 import Form from '@/components/form-control/Form.vue';
 import FormField from '@/components/form-control/FormField.vue';
 

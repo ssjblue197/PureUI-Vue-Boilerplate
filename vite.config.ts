@@ -23,14 +23,14 @@ export default defineConfig({
         compilerOptions: {
           // treat all tags with a dash as custom elements
           isCustomElement: (tag: string) =>
-            String(tag).startsWith('sl-'),
+            String(tag).startsWith('p-'),
         },
       },
     }),
     viteStaticCopy({
       targets: [
         {
-          src: 'node_modules/@shoelace-style/shoelace/dist/assets',
+          src: 'node_modules/pure-uikit/dist/assets',
           dest: 'public',
         },
       ],

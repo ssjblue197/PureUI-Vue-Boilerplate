@@ -3,7 +3,7 @@
     className="w-screen h-screen bg-black flex items-center justify-center"
   >
     <span
-      className="font-semibold text-3xl text-[var(--sl-color-primary-500)]"
+      className="font-semibold text-3xl text-[var(--p-color-primary-500)]"
     >
       Not Found
     </span>

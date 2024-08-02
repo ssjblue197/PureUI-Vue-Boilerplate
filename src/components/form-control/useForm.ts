@@ -125,37 +125,37 @@ export function useForm<T>({
           document.querySelector(
             `[name="${firstErrorField}"]`,
           ) as HTMLElement
-        )?.querySelector('sl-input') ||
+        )?.querySelector('p-input') ||
         (
           document.querySelector(
             `[name="${firstErrorField}"]`,
           ) as HTMLElement
-        )?.querySelector('sl-textarea') ||
+        )?.querySelector('p-textarea') ||
         (
           document.querySelector(
             `[name="${firstErrorField}"]`,
           ) as HTMLElement
-        )?.querySelector('sl-select') ||
+        )?.querySelector('p-select') ||
         (
           document.querySelector(
             `[name="${firstErrorField}"]`,
           ) as HTMLElement
-        )?.querySelector('sl-checkbox') ||
+        )?.querySelector('p-checkbox') ||
         (
           document.querySelector(
             `[name="${firstErrorField}"]`,
           ) as HTMLElement
-        )?.querySelector('sl-toggle') ||
+        )?.querySelector('p-toggle') ||
         (
           document.querySelector(
             `[name="${firstErrorField}"]`,
           ) as HTMLElement
-        )?.querySelector('sl-switch') ||
+        )?.querySelector('p-switch') ||
         (
           document.querySelector(
             `[name="${firstErrorField}"]`,
           ) as HTMLElement
-        )?.querySelector('sl-color-picker');
+        )?.querySelector('p-color-picker');
       currentFormField?.scrollIntoView({
         behavior: 'smooth',
         block: 'center',

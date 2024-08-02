@@ -52,7 +52,7 @@
         <div
           class="flex w-full items-center justify-between"
         >
-          <sl-checkbox>Remember me</sl-checkbox>
+          <p-checkbox>Remember me</p-checkbox>
           <span
             class="inline-block cursor-pointer select-none text-sm font-semibold text-brand-700 active:opacity-80"
           >
@@ -71,14 +71,14 @@
         </span>
       </div>
       <div class="flex w-full flex-col gap-4">
-        <sl-button
+        <p-button
           variant="primary"
           type="submit"
           @click="submitForm"
-          >Sign in</sl-button
+          >Sign in</p-button
         >
-        <sl-button variant="primary" outline
-          >Sign in with Google</sl-button
+        <p-button variant="primary" outline
+          >Sign in with Google</p-button
         >
       </div>
     </div>

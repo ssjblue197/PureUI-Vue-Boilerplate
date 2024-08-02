@@ -33,7 +33,7 @@
     "types": [
       "vite/client",
       "node",
-      "@shoelace-style/shoelace/dist/types/vue"
+      "pure-uikit/dist/types/vue"
     ],
 
     //

@@ -1,5 +1,5 @@
 {
-    "name": "vue-vite-shoelace-ts",
+    "name": "vue-base-pure-ui",
     "private": true,
     "version": "1.0.0",
     "type": "module",
@@ -27,8 +27,8 @@
         "zod": "^3.23.8"
     },
     "devDependencies": {
-        "@shoelace-style/shoelace": "^2.15.1",
-        "@shoelace-style/vue-sl-model": "^1.0.1",
+        "pure-uikit": "^1.0.3",
+        "pure-v-model": "^1.0.1",
         "@vitejs/plugin-vue": "^5.0.5",
         "autoprefixer": "^10.4.19",
         "copy-to-clipboard": "^3.3.3",

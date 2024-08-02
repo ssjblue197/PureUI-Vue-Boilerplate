@@ -1,7 +1,4 @@
-import {
-  SlInput,
-  SlIcon,
-} from '@shoelace-style/shoelace/dist/react';
+import { PInput, PIcon } from 'pure-uikit/dist/react';
 import { useState, useEffect, useRef } from 'react';
 import { enUS, vi } from 'date-fns/locale';
 import { useTranslation } from 'react-i18next';
@@ -186,41 +183,39 @@ function DateRangePicker(props: IDateRangePickerProps) {
   }, []);
   return (
     <span className="relative select-none" ref={element}>
-      <div className="flex items-center gap-2 w-full relative">
-        <SlInput
+      <div className="relative flex w-full items-center gap-2">
+        <PInput
           placeholder={'YYYY-MM-DD'}
-          onSlFocus={() => setShow(true)}
+          onPFocus={() => setShow(true)}
           value={fromValue}
-          onSlChange={handleFromChange}
+          onPChange={handleFromChange}
           autocomplete="off"
-          className={
-            twMerge('w-[calc(50vw-2rem)] sm:w-[calc(50%-2rem)] sm:max-w-48',
-            props?.inputClasses
-            )
-          }
+          className={twMerge(
+            'w-[calc(50vw-2rem)] sm:w-[calc(50%-2rem)] sm:max-w-48',
+            props?.inputClasses,
+          )}
         >
-          <SlIcon
+          <PIcon
             name="calendar"
             slot="prefix"
-            className="text-[var(--sl-color-neutral-500)] w-5 h-5"
-          ></SlIcon>
-        </SlInput>
+            className="h-5 w-5 text-[var(--p-color-neutral-500)]"
+          ></PIcon>
+        </PInput>
         -
-        <SlInput
+        <PInput
           placeholder={'YYYY-MM-DD'}
-          onSlFocus={() => setShow(true)}
+          onPFocus={() => setShow(true)}
           value={toValue}
-          onSlChange={handleToChange}
+          onPChange={handleToChange}
           autocomplete="off"
-          className={
-            twMerge('w-[calc(50vw-2rem)] sm:w-[calc(50%-2rem)] sm:max-w-48',
-            props?.inputClasses
-            )
-          }
-        ></SlInput>
+          className={twMerge(
+            'w-[calc(50vw-2rem)] sm:w-[calc(50%-2rem)] sm:max-w-48',
+            props?.inputClasses,
+          )}
+        ></PInput>
       </div>
       {show && (
-        <span className="absolute top-[calc(100%+8px)] left-0 bg-[var(--sl-color-neutral-100)]  rounded-lg shadow-lg z-10">
+        <span className="absolute left-0 top-[calc(100%+8px)] z-10 rounded-lg bg-[var(--p-color-neutral-100)] shadow-lg">
           {isMobile ? (
             <DayPicker
               {...props}

@@ -1,9 +1,6 @@
-@import './font';
-@import './tailwind';
-@import './base';
-@import './component';
-@import './utilities';
-@import './customize';
-@import './toast';
-@import './nprogress'; // @import './daypicker';
-@import './sidebar';
+@import './design/index';
+@import './others/nprogress';
+@import './others/tailwind';
+@import './others/reset';
+@import './themes/index';
+@import './components/index';

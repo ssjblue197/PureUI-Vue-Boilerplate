@@ -1,0 +1,12 @@
+@layer base {
+    :root {
+        /*
+   * Elevations
+   */
+   --p-shadow-x-small: 0 1px 2px hsl(240 3.8% 46.1% / 6%);
+   --p-shadow-small: 0 1px 2px hsl(240 3.8% 46.1% / 12%);
+   --p-shadow-medium: 0 2px 4px hsl(240 3.8% 46.1% / 12%);
+   --p-shadow-large: 0 2px 8px hsl(240 3.8% 46.1% / 12%);
+   --p-shadow-x-large: 0 4px 16px hsl(240 3.8% 46.1% / 12%);
+    }
+}

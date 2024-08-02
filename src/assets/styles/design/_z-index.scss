@@ -1,0 +1,12 @@
+@layer base {
+    :root {
+        /*
+   * Z-indexes
+   */
+   --p-z-index-drawer: 700;
+   --p-z-index-dialog: 800;
+   --p-z-index-dropdown: 900;
+   --p-z-index-toast: 950;
+   --p-z-index-tooltip: 1000;
+    }
+}
