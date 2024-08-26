@@ -20,11 +20,16 @@
     "
   >
     <div
-      class="flex w-full items-center gap-md px-lg py-md hover:bg-gray-50"
       :class="
-        props.data?.router?.name === route.name
-          ? 'bg-gray-50'
-          : ''
+        twMerge(
+          'flex w-full items-center gap-md py-md hover:bg-gray-50',
+          props.data?.router?.name === route.name
+            ? 'bg-gray-50'
+            : '',
+          !systemStore.isCollapseSidebar
+            ? 'px-lg'
+            : 'justify-center',
+        )
       "
     >
       <p-dropdown

@@ -12,7 +12,7 @@
     "
   >
     <div class="navigation flex flex-col gap-6 pt-md">
-      <div class="flex w-full items-center gap-2 px-sm">
+      <div class="flex w-full items-center gap-2">
         <img src="/logo.png" alt="logo" class="h-10" />
         <span
           class="text-lg font-bold text-gray-900"
@@ -90,7 +90,7 @@
     </div>
     <p-button
       circle
-      class="absolute right-0 top-12 z-10 ml-auto translate-x-[50%]"
+      class="absolute right-0 top-10 z-10 ml-auto translate-x-[50%]"
       @click="handleCollapseSidebar"
     >
       <p-icon
