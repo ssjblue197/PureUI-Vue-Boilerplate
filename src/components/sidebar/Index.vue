@@ -4,10 +4,10 @@
     class=""
     :class="
       twMerge(
-        'relative flex w-[312px] select-none flex-col justify-between p-xl transition-all duration-150',
+        'relative flex w-[312px] select-none flex-col justify-between px-xs transition-all duration-300 md:p-xl',
         !systemStore.isCollapseSidebar
           ? 'w-[312px]'
-          : 'w-[80px]',
+          : 'w-[60px] md:w-[80px]',
       )
     "
   >
@@ -91,10 +91,7 @@
     <p-button
       circle
       class="absolute right-0 top-12 z-10 ml-auto translate-x-[50%]"
-      @click="
-        systemStore.isCollapseSidebar =
-          !systemStore.isCollapseSidebar
-      "
+      @click="handleCollapseSidebar"
     >
       <p-icon
         name="chevron-left"
@@ -110,7 +107,9 @@
 
 <script setup lang="ts">
 import { useAuthStore } from '@/modules/auth/store';
-import sidebar from '@/components/sidebar/const';
+import sidebar, {
+  SidebarRouter,
+} from '@/components/sidebar/const';
 import SidebarItem from '@/components/sidebar/SidebarItem.vue';
 import { useRouter } from 'vue-router';
 import { twMerge } from 'tailwind-merge';
@@ -127,11 +126,21 @@ const handleLogout = () => {
     router.push({ name: 'login' });
   } catch (error) {}
 };
+
+const handleCollapseSidebar = () => {
+  systemStore.isCollapseSidebar =
+    !systemStore.isCollapseSidebar;
+  if (systemStore.isCollapseSidebar) {
+    sidebar.forEach((i: SidebarRouter) => {
+      i.isOpen = false;
+    });
+  }
+};
 </script>
 
 <style scoped lang="scss">
 #sidebar {
-  @apply h-screen min-w-[90px] bg-white;
+  @apply h-screen min-w-[60px] bg-white;
 }
 
 #footer {
