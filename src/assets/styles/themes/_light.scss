@@ -3,15 +3,13 @@
   :host,
   .p-theme-light {
     color-scheme: light;
-
     /* Focus rings */
     --p-focus-ring-color: var(--p-color-primary-600);
     --p-focus-ring-style: solid;
-    --p-focus-ring-width: 1px;
+    --p-focus-ring-width: 2px;
     --p-focus-ring: var(--p-focus-ring-style)
       var(--p-focus-ring-width) var(--p-focus-ring-color);
     --p-focus-ring-offset: 1px;
-
     /*
    * Forms
    */
@@ -31,7 +29,7 @@
       --p-input-background-color
     );
     --p-input-background-color-focus: var(
-      --p-input-background-color
+      --p-color-primary-25
     );
     --p-input-background-color-disabled: var(
       --p-color-neutral-100
@@ -151,18 +149,16 @@
     /*
    * Tooltips
    */
-    --p-tooltip-border-radius: var(
-      --p-border-radius-large
-    );
+    --p-tooltip-border-radius: var(--p-border-radius-large);
     --p-tooltip-background-color: var(
-      --p-color-neutral-800
+      --p-color-neutral-900
     );
     --p-tooltip-color: var(--p-color-neutral-0);
     --p-tooltip-font-family: var(--p-font-sans);
-    --p-tooltip-font-weight: var(--p-font-weight-normal);
-    --p-tooltip-font-size: var(--p-font-size-small);
+    --p-tooltip-font-weight: var(--p-font-weight-semibold);
+    --p-tooltip-font-size: var(--p-font-size-x-small);
     --p-tooltip-line-height: var(--p-line-height-dense);
-    --p-tooltip-padding: var(--p-spacing-2x-small)
+    --p-tooltip-padding: var(--p-spacing-x-small)
       var(--p-spacing-x-small);
     --p-tooltip-arrow-size: 6px;
   }

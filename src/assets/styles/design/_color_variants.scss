@@ -1,67 +1,88 @@
 @layer base {
-    :root {
-        /*
+  :root {
+    /*
    * Theme Tokens
    */
-        /* Primary */
-        --p-color-primary-50: var(--p-color-indigo-50);
-        --p-color-primary-100: var(--p-color-indigo-100);
-        --p-color-primary-200: var(--p-color-indigo-200);
-        --p-color-primary-300: var(--p-color-indigo-300);
-        --p-color-primary-400: var(--p-color-indigo-400);
-        --p-color-primary-500: var(--p-color-indigo-500);
-        --p-color-primary-600: var(--p-color-indigo-600);
-        --p-color-primary-700: var(--p-color-indigo-700);
-        --p-color-primary-800: var(--p-color-indigo-800);
-        --p-color-primary-900: var(--p-color-indigo-900);
-        --p-color-primary-950: var(--p-color-indigo-950);
-        /* Success */
-        --p-color-success-50: var(--p-color-lime-50);
-        --p-color-success-100: var(--p-color-lime-100);
-        --p-color-success-200: var(--p-color-lime-200);
-        --p-color-success-300: var(--p-color-lime-300);
-        --p-color-success-400: var(--p-color-lime-400);
-        --p-color-success-500: var(--p-color-lime-500);
-        --p-color-success-600: var(--p-color-lime-600);
-        --p-color-success-700: var(--p-color-lime-700);
-        --p-color-success-800: var(--p-color-lime-800);
-        --p-color-success-900: var(--p-color-lime-900);
-        --p-color-success-950: var(--p-color-lime-950);
-        /* Warning */
-        --p-color-warning-50: var(--p-color-yellow-50);
-        --p-color-warning-100: var(--p-color-yellow-100);
-        --p-color-warning-200: var(--p-color-yellow-200);
-        --p-color-warning-300: var(--p-color-yellow-300);
-        --p-color-warning-400: var(--p-color-yellow-400);
-        --p-color-warning-500: var(--p-color-yellow-500);
-        --p-color-warning-600: var(--p-color-yellow-600);
-        --p-color-warning-700: var(--p-color-yellow-700);
-        --p-color-warning-800: var(--p-color-yellow-800);
-        --p-color-warning-900: var(--p-color-yellow-900);
-        --p-color-warning-950: var(--p-color-yellow-950);
-        /* Danger */
-        --p-color-danger-50: var(--p-color-red-50);
-        --p-color-danger-100: var(--p-color-red-100);
-        --p-color-danger-200: var(--p-color-red-200);
-        --p-color-danger-300: var(--p-color-red-300);
-        --p-color-danger-400: var(--p-color-red-400);
-        --p-color-danger-500: var(--p-color-red-500);
-        --p-color-danger-600: var(--p-color-red-600);
-        --p-color-danger-700: var(--p-color-red-700);
-        --p-color-danger-800: var(--p-color-red-800);
-        --p-color-danger-900: var(--p-color-red-900);
-        --p-color-danger-950: var(--p-color-red-950);
-        /* Neutral */
-        --p-color-neutral-50: var(--p-color-gray-50);
-        --p-color-neutral-100: var(--p-color-gray-100);
-        --p-color-neutral-200: var(--p-color-gray-200);
-        --p-color-neutral-300: var(--p-color-gray-300);
-        --p-color-neutral-400: var(--p-color-gray-400);
-        --p-color-neutral-500: var(--p-color-gray-500);
-        --p-color-neutral-600: var(--p-color-gray-600);
-        --p-color-neutral-700: var(--p-color-gray-700);
-        --p-color-neutral-800: var(--p-color-gray-800);
-        --p-color-neutral-900: var(--p-color-gray-900);
-        --p-color-neutral-950: var(--p-color-gray-950);
-    }
+    /* Brand */
+    --p-color-brand-25: #fcfaff;
+    --p-color-brand-50: #f9f5ff;
+    --p-color-brand-100: #f4ebff;
+    --p-color-brand-200: #e9d7fe;
+    --p-color-brand-300: #d6bbfb;
+    --p-color-brand-400: #b692f6;
+    --p-color-brand-500: #9e77ed;
+    --p-color-brand-600: #7f56d9;
+    --p-color-brand-700: #6941c6;
+    --p-color-brand-800: #53389e;
+    --p-color-brand-900: #42307d;
+    --p-color-brand-950: #2c1c5f;
+    /* Primary */
+    --p-color-primary-25: var(--p-color-brand-25);
+    --p-color-primary-50: var(--p-color-brand-50);
+    --p-color-primary-100: var(--p-color-brand-100);
+    --p-color-primary-200: var(--p-color-brand-200);
+    --p-color-primary-300: var(--p-color-brand-300);
+    --p-color-primary-400: var(--p-color-brand-400);
+    --p-color-primary-500: var(--p-color-brand-500);
+    --p-color-primary-600: var(--p-color-brand-600);
+    --p-color-primary-700: var(--p-color-brand-700);
+    --p-color-primary-800: var(--p-color-brand-800);
+    --p-color-primary-900: var(--p-color-brand-900);
+    --p-color-primary-950: var(--p-color-brand-950);
+    /* Success */
+    --p-color-success-25: #f6fef9;
+    --p-color-success-50: #ecfdf3;
+    --p-color-success-100: #dcfae6;
+    --p-color-success-200: #abefc6;
+    --p-color-success-300: #75e0a7;
+    --p-color-success-400: #47cd89;
+    --p-color-success-500: #17b26a;
+    --p-color-success-600: #079455;
+    --p-color-success-700: #067647;
+    --p-color-success-800: #085d3a;
+    --p-color-success-900: #074d31;
+    --p-color-success-950: #053321;
+    /* Warning */
+    --p-color-warning-25: #fffcf5;
+    --p-color-warning-50: #fffaeb;
+    --p-color-warning-100: #fef0c7;
+    --p-color-warning-200: #fedf89;
+    --p-color-warning-300: #fec84b;
+    --p-color-warning-400: #fdb022;
+    --p-color-warning-500: #f79009;
+    --p-color-warning-600: #dc6803;
+    --p-color-warning-700: #b54708;
+    --p-color-warning-800: #93370d;
+    --p-color-warning-900: #7a2e0e;
+    --p-color-warning-950: #4e1d09;
+    /* Danger */
+    --p-color-danger-25: #fffbfa;
+    --p-color-danger-50: #fef3f2;
+    --p-color-danger-100: #fee4e2;
+    --p-color-danger-200: #fecdca;
+    --p-color-danger-300: #fda29b;
+    --p-color-danger-400: #f97066;
+    --p-color-danger-500: #f04438;
+    --p-color-danger-600: #d92d20;
+    --p-color-danger-700: #b42318;
+    --p-color-danger-800: #912018;
+    --p-color-danger-900: #7a271a;
+    --p-color-danger-950: #55160c;
+    /* Neutral */
+    --p-color-neutral-25: #fcfcfd;
+    --p-color-neutral-50: #f9fafb;
+    --p-color-neutral-100: #f2f4f7;
+    --p-color-neutral-200: #eaecf0;
+    --p-color-neutral-300: #d0d5dd;
+    --p-color-neutral-400: #98a2b3;
+    --p-color-neutral-500: #667085;
+    --p-color-neutral-600: #475467;
+    --p-color-neutral-700: #344054;
+    --p-color-neutral-800: #182230;
+    --p-color-neutral-900: #101828;
+    --p-color-neutral-950: #0c111d;
+    /* Neutral one-offs */
+    --p-color-neutral-0: hsl(0, 0%, 100%);
+    --p-color-neutral-1000: hsl(0, 0%, 0%);
+  }
 }

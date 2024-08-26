@@ -1,6 +1,6 @@
 <template>
   <div
-    class="wrapper flex flex-col items-center justify-center bg-[url('@/assets/images/background-pattern.jpg')] bg-contain bg-top bg-no-repeat"
+    class="wrapper flex flex-col items-center justify-center"
   >
     <div class="flex flex-col items-center gap-8">
       <div
@@ -49,7 +49,7 @@
             class="w-full"
           />
         </Form>
-        <div
+        <!-- <div
           class="flex w-full items-center justify-between"
         >
           <p-checkbox>Remember me</p-checkbox>
@@ -58,9 +58,9 @@
           >
             Forgot password
           </span>
-        </div>
+        </div> -->
       </div>
-      <div id="footer" class="text-center">
+      <!-- <div id="footer" class="text-center">
         <span class="text-sm font-normal text-gray-600">
           Don’t have an account?
           <span
@@ -69,7 +69,7 @@
             Sign up
           </span>
         </span>
-      </div>
+      </div> -->
       <div class="flex w-full flex-col gap-4">
         <p-button
           variant="primary"
@@ -77,14 +77,16 @@
           @click="submitForm"
           >Sign in</p-button
         >
-        <p-button variant="primary" outline
+        <!-- <p-button variant="primary" outline
           >Sign in with Google</p-button
-        >
+        > -->
       </div>
     </div>
-    <span
-      class="absolute bottom-6 text-sm text-gray-600 md:left-6"
-      >© Copyright 2024.</span
+    <a
+      class="absolute bottom-6 text-xs text-gray-400 md:left-6"
+      href="https://pureui.xyz/"
+      target="_blank"
+      >© Power by Pure UI.</a
     >
   </div>
 </template>

@@ -4,10 +4,8 @@ import axios from 'axios';
 import { getErrorMessage } from '@/utils/helper';
 import type { User, Form } from '@/modules/auth/types';
 import { useToast } from '@/composables/useToast';
-import { useRouter } from 'vue-router';
 
 const toast = useToast();
-const router = useRouter();
 
 export const useAuthStore = defineStore('auth', {
   state: () => {
@@ -38,7 +36,6 @@ export const useAuthStore = defineStore('auth', {
         //handle logout
         this.user = null;
         this.token = null;
-        router.push({ name: 'login' });
       } catch (error) {
         if (axios.isAxiosError(error)) {
           toast.show({

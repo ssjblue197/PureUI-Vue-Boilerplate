@@ -17,8 +17,10 @@ import dayjs from '@/plugins/dayjs';
 setBasePath('/public');
 registerIconLibrary('extend', {
   resolver: (name: string) => `icons/${name}.svg`, //Public folder after bundle
-  mutator: (svg: SVGElement) =>
-    svg.setAttribute('fill', 'currentColor'),
+  mutator: (svg: SVGElement) => {
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor');
+  },
 });
 
 const app = createApp(App);

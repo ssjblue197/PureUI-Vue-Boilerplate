@@ -3,7 +3,8 @@ import { defineStore } from 'pinia';
 interface System {
   isCheckNewVersion: boolean;
   version: string;
-  sessionTimeout: any;
+  sessionTimeout: Number | null;
+  isCollapseSidebar: boolean;
 }
 
 export const useSystemStore = defineStore({
@@ -12,6 +13,7 @@ export const useSystemStore = defineStore({
     isCheckNewVersion: false,
     version: 'beta',
     sessionTimeout: null,
+    isCollapseSidebar: false as boolean,
   }),
   getters: {},
   actions: {},

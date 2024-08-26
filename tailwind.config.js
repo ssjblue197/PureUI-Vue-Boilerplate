@@ -354,6 +354,7 @@ module.exports = {
             /* Font size for title: example H1-H6 */
             'title-xs': ['1.5rem', { lineHeight: '2rem' }],
             'title-sm': ['1.875rem', { lineHeight: '2.375rem' }],
+            'title-md': ['2.25rem', { lineHeight: '2.75rem' }],
             'title-base': ['2.25rem', { lineHeight: '2.75rem' }],
             'title-lg': ['3rem', { lineHeight: '3.75rem' }],
             'title-xl': ['3.75rem', { lineHeight: '4.5rem' }],

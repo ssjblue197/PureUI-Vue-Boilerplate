@@ -35,7 +35,7 @@ const router = createRouter({
   routes: [
     ...convertRoutes,
     {
-      path: '/:path(.*)', // This catches all undefined routes
+      path: '/:pathMatch(.*)*', // This catches all undefined routes
       name: 'NotFound',
       component: NotFound,
     },
