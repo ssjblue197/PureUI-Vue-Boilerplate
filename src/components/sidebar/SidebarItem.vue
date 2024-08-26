@@ -14,7 +14,7 @@
     "
     :class="
       twMerge(
-        'menu-item relative flex cursor-pointer select-none flex-col gap-xs overflow-hidden rounded-sm transition-all duration-200',
+        'menu-item duration-250 relative flex cursor-pointer select-none flex-col gap-xs overflow-hidden rounded-sm transition-all will-change-auto',
         props.data?.isOpen ? 'max-h-[100vh]' : 'max-h-12',
       )
     "
@@ -22,9 +22,9 @@
     <div
       :class="
         twMerge(
-          'flex w-full items-center gap-md py-md hover:bg-gray-50',
+          'flex w-full items-center gap-md py-md text-gray-700 hover:bg-gray-50 hover:text-gray-800',
           props.data?.router?.name === route.name
-            ? 'bg-gray-50'
+            ? 'bg-gray-50 text-gray-800'
             : '',
           !systemStore.isCollapseSidebar
             ? 'px-lg'
@@ -66,7 +66,7 @@
         library="extend"
       ></p-icon-button>
       <span
-        class="text-base font-semibold text-gray-700"
+        class="text-base font-semibold"
         v-if="!systemStore.isCollapseSidebar"
       >
         {{ props.data?.name }}

@@ -92,6 +92,32 @@ const sidebar: SidebarRouter[] = reactive([
     router: {
       name: 'payment',
     },
+    children: [
+      {
+        id: 'wallet',
+        name: 'Wallet',
+        permissions: [],
+        router: {
+          name: 'wallet',
+        },
+      },
+      {
+        id: 'transaction',
+        name: 'Transaction',
+        permissions: [],
+        router: {
+          name: 'transaction',
+        },
+      },
+      {
+        id: 'invoice',
+        name: 'Invoice',
+        permissions: [],
+        router: {
+          name: 'invoice',
+        },
+      },
+    ],
   },
 ]);
 
