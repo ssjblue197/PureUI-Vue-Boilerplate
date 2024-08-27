@@ -148,7 +148,7 @@ const showLogout = () => {
 };
 
 const cancelLogout = () => {
-  logoutModal.value.close();
+  logoutModal.value.hide();
 };
 
 const handleLogout = () => {
