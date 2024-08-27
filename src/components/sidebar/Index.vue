@@ -49,7 +49,7 @@
             </p-tooltip>
           </span>
           <p-menu>
-            <p-menu-item @click="handleLogout">
+            <p-menu-item @click="showLogout">
               <span
                 class="flex items-center gap-xs text-error-500"
               >
@@ -83,7 +83,7 @@
       </div>
       <p-icon-button
         v-if="!systemStore.isCollapseSidebar"
-        @click="handleLogout"
+        @click="showLogout"
         name="box-arrow-right"
         label="Logout"
       ></p-icon-button>
@@ -102,6 +102,26 @@
         }"
       ></p-icon>
     </p-button>
+    <p-dialog
+      label="Logout"
+      class="dialog-overview"
+      ref="logoutModal"
+    >
+      By clicking logout, you are going to sign out from the
+      current session.
+      <p-button
+        slot="footer"
+        variant="default"
+        @click.stop="cancelLogout"
+        >Cancel</p-button
+      >
+      <p-button
+        slot="footer"
+        variant="danger"
+        @click.stop="handleLogout"
+        >Logout</p-button
+      >
+    </p-dialog>
   </div>
 </template>
 
@@ -114,11 +134,22 @@ import SidebarItem from '@/components/sidebar/SidebarItem.vue';
 import { useRouter } from 'vue-router';
 import { twMerge } from 'tailwind-merge';
 import { useSystemStore } from '@/stores/system';
+import { ref } from 'vue';
 
 const systemStore = useSystemStore();
 const router = useRouter();
 
 const authStore = useAuthStore();
+
+const logoutModal = ref();
+
+const showLogout = () => {
+  logoutModal.value.show();
+};
+
+const cancelLogout = () => {
+  logoutModal.value.close();
+};
 
 const handleLogout = () => {
   try {
