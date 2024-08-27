@@ -21,6 +21,10 @@ export const useAuthStore = defineStore('auth', {
         const { data } = await AuthAPI.login(payload);
         this.token = data?.access_token || null;
         this.user = data?.user || null;
+        toast.show({
+          variant: 'success',
+          message: 'Login successfully',
+        });
         return data;
       } catch (error) {
         if (axios.isAxiosError(error)) {
