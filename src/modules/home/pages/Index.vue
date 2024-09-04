@@ -50,7 +50,6 @@ const local: Local = reactive({
         field: 'address.street',
         id: 'street',
         headerName: 'Street',
-        maxWidth: '200px',
       },
       {
         field: 'address.department',

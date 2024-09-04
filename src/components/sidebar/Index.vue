@@ -96,6 +96,7 @@
       <p-icon
         name="chevron-left"
         label="Show"
+        class="center"
         :class="{
           'rotate-180': systemStore.isCollapseSidebar,
           'rotate-0': !systemStore.isCollapseSidebar,
