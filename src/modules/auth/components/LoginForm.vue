@@ -48,13 +48,6 @@
             password-toggle
             class="w-full"
           />
-          <!-- <FormField
-            :form="form"
-            element="file-upload"
-            :label="'Your CV'"
-            name="file"
-            class="w-full"
-          /> -->
         </Form>
         <!-- <div
           class="flex w-full items-center justify-between"
@@ -116,7 +109,7 @@ const form = useForm({
     password: '',
   },
   mode: 'onChange',
-  criteriaMode: 'firstError',
+  criteriaMode: 'all',
   shouldFocusError: true,
 });
 

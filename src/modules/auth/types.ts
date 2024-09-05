@@ -10,16 +10,10 @@ export interface Form {
   username?: string;
   email?: string;
   password?: string;
-}
-
-const MAX_FILE_SIZE = 5000000;
-function checkFileType(file: File) {
-  if (file?.name) {
-    const fileType = file.name.split('.').pop();
-    if (fileType === 'docx' || fileType === 'pdf')
-      return true;
-  }
-  return false;
+  address?: {
+    country?: string;
+    city?: string;
+  };
 }
 
 // Define your form schema using Zod
@@ -31,18 +25,4 @@ export const loginSchema = z.object({
     })
     .nullable(),
   password: z.string().min(6).nullable(),
-  // file: z
-  //   .any()
-  //   .refine(
-  //     (file: File) => file?.length !== 0,
-  //     'File is required',
-  //   )
-  //   .refine(
-  //     (file) => file.size < MAX_FILE_SIZE,
-  //     'Max size is 5MB.',
-  //   )
-  //   .refine(
-  //     (file) => checkFileType(file),
-  //     'Only .pdf, .docx formats are supported.',
-  //   ),
 });

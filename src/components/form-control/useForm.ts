@@ -93,7 +93,7 @@ export function useForm<T>({
         if (criteriaMode === 'firstError') {
           let flag = false;
           err.issues.forEach(({ path, message }) => {
-            if (!newErrors[path[0]] && !flag) {
+            if (!newErrors[path.join('.')] && !flag) {
               flag = true;
               newErrors[path[0]] = message;
               errorList.value.push({
@@ -104,7 +104,7 @@ export function useForm<T>({
           });
         } else {
           err.issues.forEach(({ path, message }) => {
-            newErrors[path[0]] = message;
+            newErrors[path.join('.')] = message;
             errorList.value.push({
               path,
               message,
