@@ -50,7 +50,8 @@ interface Props {
     | 'radio'
     | 'textarea'
     | 'switch'
-    | 'color-picker';
+    | 'color-picker'
+    | 'file-upload';
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -75,6 +76,8 @@ const currentComponent = computed(() => {
       return 'p-switch';
     case 'color-picker':
       return 'p-color-picker';
+    case 'file-upload':
+      return 'p-file-upload';
     default:
       break;
   }

@@ -155,7 +155,12 @@ export function useForm<T>({
           document.querySelector(
             `[name="${firstErrorField}"]`,
           ) as HTMLElement
-        )?.querySelector('p-color-picker');
+        )?.querySelector('p-color-picker') ||
+        (
+          document.querySelector(
+            `[name="${firstErrorField}"]`,
+          ) as HTMLElement
+        )?.querySelector('p-file-upload');
       currentFormField?.scrollIntoView({
         behavior: 'smooth',
         block: 'center',
