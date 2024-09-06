@@ -14,6 +14,8 @@ import router from '@/router';
 
 import dayjs from '@/plugins/dayjs';
 
+import PureModel from '@/plugins/pure-model';
+
 setBasePath('/public');
 registerIconLibrary('extend', {
   resolver: (name: string) => `icons/${name}.svg`, //Public folder after bundle
@@ -24,6 +26,8 @@ registerIconLibrary('extend', {
 });
 
 const app = createApp(App);
+
+app.use(PureModel);
 
 // Use the Day.js plugin
 app.use(dayjs);
