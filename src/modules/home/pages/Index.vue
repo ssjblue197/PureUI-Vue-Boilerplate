@@ -1,6 +1,14 @@
 <template>
   <div class="wrapper">
     <div class="relative mx-auto mt-8 w-[90%]">
+      <p-calendar
+        class="mb-8"
+        :value="local.date"
+        type="multiple"
+        ref="calendar"
+        format="DD-MM-YYYY"
+        @p-change="handleChangeDate"
+      ></p-calendar>
       <p-table
         :options="local.options"
         :loading="local.loading"
@@ -12,7 +20,8 @@
 
 <script setup lang="ts">
 import { html } from 'lit';
-import { reactive, onMounted } from 'vue';
+import { reactive, onMounted, ref } from 'vue';
+import formatter from 'pure-date-format';
 interface RowData {
   name: string;
   age: string;
@@ -28,10 +37,12 @@ interface RowData {
 interface Local {
   options: any;
   keyword: string;
-  date: Date;
+  date: (string | Date)[];
   loading: boolean;
   items: RowData[];
 }
+
+const calendar = ref(null);
 
 const local: Local = reactive({
   options: {
@@ -93,7 +104,7 @@ const local: Local = reactive({
     ],
   },
   keyword: '',
-  date: new Date(),
+  date: ['06-09-2024', '07-09-2024', new Date()],
   loading: false,
   items: [],
 });
@@ -323,8 +334,17 @@ const fetchData = async () => {
     local.loading = false;
   }
 };
+
+const handleChangeDate = (e: Event) => {
+  console.log('e', e);
+};
 onMounted(() => {
   fetchData();
+  const valid = formatter().isValid(
+    '08-10-1997 +02:00',
+    'DD-MM-YYYY Z',
+  );
+  console.log('valid', valid);
 });
 </script>
 
