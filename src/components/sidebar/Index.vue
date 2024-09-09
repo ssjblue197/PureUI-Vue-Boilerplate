@@ -13,12 +13,16 @@
   >
     <div class="navigation flex flex-col gap-6 pt-md">
       <div class="flex w-full items-center gap-2">
-        <img src="/logo.png" alt="logo" class="h-10" />
+        <img
+          src="@/assets/images/logo.svg"
+          alt="logo"
+          class="h-10"
+        />
         <span
           class="text-lg font-bold text-gray-900"
           v-if="!systemStore.isCollapseSidebar"
         >
-          SwiftPOD
+          PureUI
         </span>
       </div>
 
